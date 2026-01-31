@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cáncer de mama y IA | Visualización educativa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="tag">Proyecto divulgativo · IA aplicada a salud</p>
+      <h1>Cómo la IA ayuda a detectar cáncer de mama antes</h1>
+      <p class="lead">
+        A partir de datos clínicos reales, exploramos cómo las técnicas de
+        aprendizaje automático pueden apoyar a profesionales en la detección
+        temprana. No reemplaza al médico: amplía su capacidad de análisis.
+      </p>
+      <div class="hero-metrics">
+        <div class="metric">
+          <span class="metric-value" id="samples">—</span>
+          <span class="metric-label">muestras analizadas</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value" id="features">—</span>
+          <span class="metric-label">variables clínicas</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value" id="balance">—</span>
+          <span class="metric-label">balance M/B</span>
+        </div>
+      </div>
+      <div class="hero-note">
+        Dataset: Wisconsin Breast Cancer · Visualizaciones con PCA y t‑SNE
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-text">
+        <h2>¿Qué está viendo la IA?</h2>
+        <p>
+          Cada muestra incluye medidas del núcleo celular extraídas de biopsias.
+          La IA identifica patrones y combina decenas de variables para
+          clasificar el tumor como benigno (B) o maligno (M).
+        </p>
+        <div class="pill-list">
+          <span>radio</span><span>textura</span><span>perímetro</span><span>área</span>
+          <span>suavidad</span><span>concavidad</span><span>simetría</span>
+        </div>
+      </div>
+      <div class="panel-figure">
+        <div class="kpi">
+          <div class="kpi-title">Exactitud K‑Means</div>
+          <div class="kpi-row">
+            <div>
+              <div class="kpi-value" id="acc-pca">—</div>
+              <div class="kpi-label">sobre PCA</div>
+            </div>
+            <div>
+              <div class="kpi-value" id="acc-tsne">—</div>
+              <div class="kpi-label">sobre t‑SNE</div>
+            </div>
+          </div>
+          <p class="kpi-foot">
+            *Resultados orientativos para visualizar separabilidad de clases.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-text">
+        <h2>Dos miradas al mismo problema</h2>
+        <p>
+          PCA reduce dimensiones manteniendo la mayor varianza. t‑SNE busca
+          preservar vecindarios, mostrando agrupaciones naturales de datos.
+          Ambas técnicas ayudan a comprender si los casos benignos y malignos se
+          separan visualmente.
+        </p>
+      </div>
+      <div class="panel-charts">
+        <div class="chart" id="pca-chart"></div>
+        <div class="chart" id="tsne-chart"></div>
+      </div>
+    </section>
+
+    <section class="panel highlight">
+      <h2>Impacto potencial en salud</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Detección más temprana</h3>
+          <p>
+            Al identificar patrones difíciles de ver a simple vista, la IA puede
+            priorizar casos y reducir el tiempo hasta el diagnóstico.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Apoyo a especialistas</h3>
+          <p>
+            Los modelos ayudan a revisar grandes volúmenes de datos sin fatiga,
+            actuando como una segunda opinión objetiva.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Mejora continua</h3>
+          <p>
+            Con más datos y validación clínica, los modelos se afinan y pueden
+            adaptarse a distintos perfiles de pacientes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-text">
+        <h2>Limitaciones y ética</h2>
+        <p>
+          La IA no sustituye al diagnóstico médico. Requiere datos representativos,
+          validación clínica y supervisión humana. La transparencia y la explicabilidad
+          son clave para un uso responsable.
+        </p>
+      </div>
+      <div class="panel-text">
+        <h2>¿Qué puedes aprender aquí?</h2>
+        <ul class="checklist">
+          <li>Cómo se prepara un dataset real.</li>
+          <li>Por qué la normalización es esencial.</li>
+          <li>Cómo interpretar gráficos PCA y t‑SNE.</li>
+          <li>La diferencia entre visualizar y diagnosticar.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Proyecto educativo · Datos de investigación pública · 2026</p>
+  </footer>
+
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
