@@ -90,6 +90,46 @@
       </div>
     </section>
 
+    <section class="panel">
+      <div class="panel-text">
+        <h2>¿Qué variables se mueven juntas?</h2>
+        <p>
+          Un mapa de correlaciones ayuda a ver qué características cambian de
+          forma similar. Esto guía qué señales son más relevantes para el
+          diagnóstico.
+        </p>
+      </div>
+      <div class="chart" id="heatmap"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-text">
+        <h2>Antes y después de normalizar</h2>
+        <p>
+          Los modelos necesitan que las variables estén en escalas comparables.
+          Este comparador muestra la misma nube de datos antes y después de la
+          estandarización.
+        </p>
+      </div>
+      <div class="slider-wrap">
+        <div class="slider-stage" id="before-after">
+          <canvas id="raw-canvas" width="420" height="300"></canvas>
+          <div class="slider-overlay" id="overlay">
+            <canvas id="norm-canvas" width="420" height="300"></canvas>
+          </div>
+          <input type="range" id="slider" min="0" max="100" value="50" />
+          <div class="slider-label left">Crudo</div>
+          <div class="slider-label right">Normalizado</div>
+        </div>
+        <div class="slider-caption" id="slider-caption">—</div>
+      </div>
+    </section>
+
+    <section class="panel highlight">
+      <h2>Ejemplos reales del dataset</h2>
+      <div class="grid" id="cases"></div>
+    </section>
+
     <section class="panel highlight">
       <h2>Impacto potencial en salud</h2>
       <div class="grid">

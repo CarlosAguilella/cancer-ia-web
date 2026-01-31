@@ -245,3 +245,104 @@ h1 {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.slider-wrap {
+  display: grid;
+  gap: 1rem;
+}
+
+.slider-stage {
+  position: relative;
+  width: min(100%, 520px);
+  aspect-ratio: 14 / 10;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.slider-stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.slider-overlay {
+  position: absolute;
+  inset: 0;
+  width: 50%;
+  overflow: hidden;
+  border-right: 2px solid #111;
+}
+
+#slider {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: calc(100% - 20px);
+  margin: 0 10px;
+}
+
+.slider-label {
+  position: absolute;
+  top: 12px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #111;
+  color: #fff;
+}
+
+.slider-label.left {
+  left: 12px;
+}
+
+.slider-label.right {
+  right: 12px;
+}
+
+.slider-caption {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.case-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.2rem;
+  border: 1px solid #eee;
+}
+
+.case-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.case-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.case-badge.m {
+  background: #ff6b3d;
+}
+
+.case-badge.b {
+  background: #0f7aa5;
+}
+
+.case-list {
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.case-list li {
+  margin-bottom: 0.4rem;
+}
